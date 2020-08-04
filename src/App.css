@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  font-size: 3px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #282c34;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.board {
+  display: grid;
+  grid-template-rows: repeat(var(--board-height), auto);
+  grid-template-columns: repeat(var(--board-width), auto);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+  height: 16rem;
+  border: 2rem outset #ffffff;
+  background-color: #c0c0c0;
+  font-size: 7.5rem;
+}
+
+.square:active,
+.square.revealed {
+  border-style: inset;
+}
+
+.square[data-adjacent-mines="1"] {
+  color: #0000fd;
+}
+
+.square[data-adjacent-mines="2"] {
+  color: #017e00;
+}
+
+.square[data-adjacent-mines="3"] {
+  color: #fe0001;
+}
+
+.square[data-adjacent-mines="4"] {
+  color: #010180;
+}
+
+.square[data-adjacent-mines="5"] {
+  color: #810101;
+}
+
+.square[data-adjacent-mines="6"] {
+  color: #008080;
+}
+
+.square[data-adjacent-mines="7"] {
+  color: #000000;
+}
+
+.square[data-adjacent-mines="8"] {
+  color: #808080;
 }
