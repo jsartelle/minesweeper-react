@@ -1,3 +1,7 @@
+# Minesweeper
+
+Minesweeper... in React! This was a learning project from 2020 to familiarize myself with React. The game logic mostly works, but there is no check for win conditions.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
